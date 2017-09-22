@@ -12,10 +12,6 @@
     <context:component-scan base-package="de.diedavids.cuba.example.ceem"/>
 
     <rabbit:connection-factory id="connectionFactory"
-                               host="localhost"
-                               username="user"
-                               password="password"
-                               port=""
 
     />
 

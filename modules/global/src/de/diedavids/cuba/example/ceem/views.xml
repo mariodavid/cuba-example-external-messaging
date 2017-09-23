@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
-
+    <view class="de.diedavids.cuba.example.ceem.entity.Customer"
+          extends="_local"
+          name="customer-view">
+        <property name="orders"
+                  view="_minimal"/>
+    </view>
+    <view class="de.diedavids.cuba.example.ceem.entity.Order"
+          extends="_local"
+          name="order-view">
+        <property name="customer"
+                  view="_minimal"/>
+    </view>
 </views>

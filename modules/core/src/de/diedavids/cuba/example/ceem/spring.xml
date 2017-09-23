@@ -12,7 +12,7 @@
     <context:component-scan base-package="de.diedavids.cuba.example.ceem"/>
 
     <rabbit:connection-factory id="connectionFactory"
-
+                               host="192.168.99.100"
     />
 
     <rabbit:template id="amqpTemplate" connection-factory="connectionFactory"
@@ -30,9 +30,9 @@
 
 
     <rabbit:listener-container connection-factory="connectionFactory">
-        <rabbit:listener ref="rabbitConsumer" method="receive" queue-names="myQueue" />
+        <rabbit:listener ref="bigOrderPresentCreator" method="receive" queue-names="myQueue" />
     </rabbit:listener-container>
 
 
-    <bean id="rabbitConsumer" class="de.diedavids.cuba.example.ceem.core.RabbitConsumer" />
+    <bean id="bigOrderPresentCreator" class="de.diedavids.cuba.example.ceem.core.BigOrderPresentCreator" />
 </beans>

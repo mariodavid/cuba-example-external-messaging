@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
         caption="msg://browseCaption"
-        class="de.diedavids.cuba.example.ceem.web.customer.CustomerBrowse"
-        focusComponent="customersTable"
-        lookupComponent="customersTable"
-        messagesPack="de.diedavids.cuba.example.ceem.web.customer">
+        class="de.diedavids.cuba.example.ceem.web.present.PresentBrowse"
+        focusComponent="presentsTable"
+        lookupComponent="presentsTable"
+        messagesPack="de.diedavids.cuba.example.ceem.web.present">
     <dsContext>
-        <groupDatasource id="customersDs"
-                         class="de.diedavids.cuba.example.ceem.entity.Customer"
-                         view="customer-view">
+        <groupDatasource id="presentsDs"
+                         class="de.diedavids.cuba.example.ceem.entity.Present"
+                         view="_local">
             <query>
-                <![CDATA[select e from ceem$Customer e]]>
+                <![CDATA[select e from ceem$Present e]]>
             </query>
         </groupDatasource>
     </dsContext>
     <dialogMode height="600"
                 width="800"/>
-    <layout expand="customersTable"
+    <layout expand="presentsTable"
             spacing="true">
         <filter id="filter"
-                applyTo="customersTable"
-                datasource="customersDs">
+                applyTo="presentsTable"
+                datasource="presentsDs">
             <properties include=".*"/>
         </filter>
-        <groupTable id="customersTable"
+        <groupTable id="presentsTable"
                     width="100%">
             <actions>
                 <action id="create"/>
@@ -31,18 +31,19 @@
                 <action id="remove"/>
             </actions>
             <columns>
-                <column id="name"/>
+                <column id="customerName"/>
+                <column id="amount"/>
             </columns>
-            <rows datasource="customersDs"/>
+            <rows datasource="presentsDs"/>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"
                           alwaysVisible="true">
                 <button id="createBtn"
-                        action="customersTable.create"/>
+                        action="presentsTable.create"/>
                 <button id="editBtn"
-                        action="customersTable.edit"/>
+                        action="presentsTable.edit"/>
                 <button id="removeBtn"
-                        action="customersTable.remove"/>
+                        action="presentsTable.remove"/>
             </buttonsPanel>
         </groupTable>
     </layout>

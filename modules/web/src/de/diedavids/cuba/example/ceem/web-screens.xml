@@ -5,4 +5,10 @@
             template="de/diedavids/cuba/example/ceem/web/customer/customer-browse.xml"/>
     <screen id="ceem$Customer.edit"
             template="de/diedavids/cuba/example/ceem/web/customer/customer-edit.xml"/>
+    <screen id="ceem$Order.browse"
+            template="de/diedavids/cuba/example/ceem/web/order/order-browse.xml"/>
+    <screen id="ceem$Order.edit"
+            template="de/diedavids/cuba/example/ceem/web/order/order-edit.xml"/>
+    <screen id="ceem$Present.browse"
+            template="de/diedavids/cuba/example/ceem/web/present/present-browse.xml"/>
 </screen-config>

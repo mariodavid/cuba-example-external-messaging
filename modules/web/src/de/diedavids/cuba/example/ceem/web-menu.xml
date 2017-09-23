@@ -3,5 +3,7 @@
     <menu id="application-ceem"
           insertBefore="administration">
         <item screen="ceem$Customer.browse"/>
+        <item screen="ceem$Order.browse"/>
+        <item screen="ceem$Present.browse"/>
     </menu>
 </menu-config>

@@ -4,5 +4,7 @@
     <persistence-unit name="cuba-example-external-messaging"
                       transaction-type="RESOURCE_LOCAL">
         <class>de.diedavids.cuba.example.ceem.entity.Customer</class>
+        <class>de.diedavids.cuba.example.ceem.entity.Order</class>
+        <class>de.diedavids.cuba.example.ceem.entity.Present</class>
     </persistence-unit>
 </persistence>

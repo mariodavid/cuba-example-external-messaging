@@ -8,7 +8,10 @@
     <dsContext>
         <datasource id="customerDs"
                     class="de.diedavids.cuba.example.ceem.entity.Customer"
-                    view="_local"/>
+                    view="customer-view">
+            <collectionDatasource id="ordersDs"
+                                  property="orders"/>
+        </datasource>
     </dsContext>
     <dialogMode height="600"
                 width="800"/>
@@ -20,6 +23,27 @@
                 <field property="name"/>
             </column>
         </fieldGroup>
+        <groupBox id="ordersBox"
+                  caption="msg://de.diedavids.cuba.example.ceem.entity/Customer.orders">
+            <table id="ordersTable"
+                   height="200px"
+                   width="100%">
+                <actions>
+                    <action id="create"/>
+                    <action id="edit"/>
+                    <action id="remove"/>
+                </actions>
+                <columns>
+                    <column id="orderDate"/>
+                </columns>
+                <rows datasource="ordersDs"/>
+                <buttonsPanel>
+                    <button action="ordersTable.create"/>
+                    <button action="ordersTable.edit"/>
+                    <button action="ordersTable.remove"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
         <frame id="windowActions"
                screen="editWindowActions"/>
     </layout>
